@@ -13,8 +13,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "baseHref": "https://sylwiavv.github.io/firtst-angular-app/",
-
             "outputPath": "dist/first-angular-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
