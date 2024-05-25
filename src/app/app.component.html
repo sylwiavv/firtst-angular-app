@@ -1,32 +1,34 @@
-
-
-
-<app-header />
+<app-header/>
 <main>
-  <ul>
-    <li><app-user /></li>
+  <ul id="users">
+    <li>
+      <app-user [id]="users[0].id" [name]="users[0].name" [avatar]="users[0].avatar" (select)="onSelectUser($event)" />
+    </li>
+    <li>
+      <app-user [id]="users[1].id" [name]="users[1].name" [avatar]="users[1].avatar"(select)="onSelectUser($event)" />
+    </li>
+    <li>
+      <app-user [id]="users[2].id" [name]="users[2].name" [avatar]="users[2].avatar" (select)="onSelectUser($event)" />
+    </li>
+    <li>
+      <app-user [id]="users[3].id" [name]="users[2].name" [avatar]="users[3].avatar" (select)="onSelectUser($event)" />
+    </li>
+    <li>
+      <app-user [id]="users[4].id" [name]="users[2].name" [avatar]="users[4].avatar" (select)="onSelectUser($event)" />
+    </li>
   </ul>
+  <app-tasks [name]="selectedUser.name" [avatar]="selectedUser.avatar"  />
 </main>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
-<router-outlet />
+<router-outlet/>
 <style>
   h1 {
     color: var(--main-bg-color2-grey-100);
     /*color: #ffa337;*/
   }
 
-  body {
-    background-color: #111111;
-  }
+
 </style>
 
 <!--<div class="pill-group">-->
