@@ -13,7 +13,17 @@ import {DUMMY_TASKS} from "../data/DUMMY_TASKS"
 })
 export class TasksComponent {
   @Input({required: true}) name!: string
+  @Input({required: true}) userId!: string
+
   @Input({required: true}) avatar!: string
 
   tasks = DUMMY_TASKS
+
+  get selectedUserTasks() {
+    return this.tasks.filter((task) => task.userId === this.userId)
+  }
+
+  onCompleteTask(id:string) {
+    this.tasks.filter((task) => task.id !== id)
+  }
 }

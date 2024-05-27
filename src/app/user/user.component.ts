@@ -18,10 +18,10 @@ type User = {
 })
 export class UserComponent {
   // selectedUser = signal(DUMMY_USERS[randomIndex])
-  selectedUser = DUMMY_USERS[randomIndex]
 
   // avatarPath = computed(() =>'assets/users/' + this.selectedUser().avatar )
   @Input({required: true}) user!: User
+  @Input({required: true}) selectedUser!: boolean
 
   @Output() select = new EventEmitter()
 
